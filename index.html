@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI 行业日报，聚焦企业工作流、资本与基础设施，以及 Agent 工具的行业动向。">
+    <title>AI 行业日报</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer=""></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="header-shell">
+        <a class="brand" href="#top" aria-label="AI 行业日报首页">
+          <span class="brand-mark" aria-hidden="true">AI</span>
+          <span class="brand-copy">
+            <strong>行业日报</strong>
+            <small>AI Industry Daily</small>
+          </span>
+        </a>
+
+        <div class="header-meta date-switcher">
+          <button class="date-trigger" id="date-trigger" type="button" aria-expanded="false" aria-controls="date-picker">
+            <time id="report-date" datetime="2026-06-16">2026.06.16</time>
+          </button>
+          <span id="report-weekday">星期二</span>
+          <span id="report-issue">第 005 期</span>
+          <div class="date-picker" id="date-picker" hidden="">
+            <div class="date-picker__header">
+              <span id="date-picker-month">2026 年 6 月</span>
+            </div>
+            <div class="date-picker__weekdays" aria-hidden="true">
+              <span>日</span>
+              <span>一</span>
+              <span>二</span>
+              <span>三</span>
+              <span>四</span>
+              <span>五</span>
+              <span>六</span>
+            </div>
+            <div class="date-picker__grid" id="date-picker-grid" role="grid" aria-label="选择日报日期"><span class="date-picker__blank"></span><button type="button" class="date-picker__day" data-date="2026-06-01" role="gridcell" aria-label="2026.06.01，第 001 期">1</button><button type="button" class="date-picker__day" data-date="2026-06-02" role="gridcell" aria-label="2026.06.02，第 002 期">2</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-03" role="gridcell" aria-label="2026-06-03，暂无日报" disabled="">3</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-04" role="gridcell" aria-label="2026-06-04，暂无日报" disabled="">4</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-05" role="gridcell" aria-label="2026-06-05，暂无日报" disabled="">5</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-06" role="gridcell" aria-label="2026-06-06，暂无日报" disabled="">6</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-07" role="gridcell" aria-label="2026-06-07，暂无日报" disabled="">7</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-08" role="gridcell" aria-label="2026-06-08，暂无日报" disabled="">8</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-09" role="gridcell" aria-label="2026-06-09，暂无日报" disabled="">9</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-10" role="gridcell" aria-label="2026-06-10，暂无日报" disabled="">10</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-11" role="gridcell" aria-label="2026-06-11，暂无日报" disabled="">11</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-12" role="gridcell" aria-label="2026-06-12，暂无日报" disabled="">12</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-13" role="gridcell" aria-label="2026-06-13，暂无日报" disabled="">13</button><button type="button" class="date-picker__day" data-date="2026-06-14" role="gridcell" aria-label="2026.06.14，第 003 期">14</button><button type="button" class="date-picker__day" data-date="2026-06-15" role="gridcell" aria-label="2026.06.15，第 004 期">15</button><button type="button" class="date-picker__day is-selected" data-date="2026-06-16" role="gridcell" aria-label="2026.06.16，第 005 期" aria-current="date">16</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-17" role="gridcell" aria-label="2026-06-17，暂无日报" disabled="">17</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-18" role="gridcell" aria-label="2026-06-18，暂无日报" disabled="">18</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-19" role="gridcell" aria-label="2026-06-19，暂无日报" disabled="">19</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-20" role="gridcell" aria-label="2026-06-20，暂无日报" disabled="">20</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-21" role="gridcell" aria-label="2026-06-21，暂无日报" disabled="">21</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-22" role="gridcell" aria-label="2026-06-22，暂无日报" disabled="">22</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-23" role="gridcell" aria-label="2026-06-23，暂无日报" disabled="">23</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-24" role="gridcell" aria-label="2026-06-24，暂无日报" disabled="">24</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-25" role="gridcell" aria-label="2026-06-25，暂无日报" disabled="">25</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-26" role="gridcell" aria-label="2026-06-26，暂无日报" disabled="">26</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-27" role="gridcell" aria-label="2026-06-27，暂无日报" disabled="">27</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-28" role="gridcell" aria-label="2026-06-28，暂无日报" disabled="">28</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-29" role="gridcell" aria-label="2026-06-29，暂无日报" disabled="">29</button><button type="button" class="date-picker__day is-disabled" data-date="2026-06-30" role="gridcell" aria-label="2026-06-30，暂无日报" disabled="">30</button></div>
+          </div>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle__label">目录</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="日报分类导航">
+        <div class="nav-shell">
+          <a href="#headline">今日头条</a>
+          <a href="#news">行业动态</a>
+          <a href="#trends" id="nav-trends" hidden>趋势项目</a>
+          <a href="#insights">趋势观察</a>
+          <a href="#data">今日数据</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-shell" aria-labelledby="page-title">
+        <div class="hero-kicker">
+          <span>Daily Briefing</span>
+          <span class="hero-kicker__line" aria-hidden="true"></span>
+          <span class="hero-kicker__count" id="report-count">本期精选 7 条｜1 条头条 · 6 条行业动态</span>
+        </div>
+
+        <div class="hero-heading">
+          <div>
+            <p class="eyebrow">今日主题</p>
+            <h1 id="page-title">AI 进入<br><em>三重压力测试</em></h1>
+          </div>
+          <p class="hero-summary" id="hero-summary">G7 把 AI 基础设施、监管和未成年人线上安全摆上议程；ChatGPT 触达 10 亿月活；Agentjacking 又把编码代理推上安全前线。今天的 AI 行业关键词，是规模、治理和可控执行。</p>
+        </div>
+
+        <ol class="signal-list" id="signal-list" aria-label="今日三条主线">
+          <li>
+            <span class="signal-number">01</span>
+            <div>
+              <h2>AI 治理进入领导人议程</h2>
+              <p>G7 峰会把前沿 AI 公司、政策制定者和线上安全议题放到同一张桌上。</p>
+            </div>
+          </li>
+        
+          <li>
+            <span class="signal-number">02</span>
+            <div>
+              <h2>消费级 AI 达到十亿规模</h2>
+              <p>ChatGPT 月活 App 用户达到 10 亿，Claude 和 Meta AI 也在高速增长。</p>
+            </div>
+          </li>
+        
+          <li>
+            <span class="signal-number">03</span>
+            <div>
+              <h2>Agent 安全成为现实问题</h2>
+              <p>Agentjacking 显示，编码代理连接外部工具后会继承新的供应链攻击面。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="headline section-shell" id="headline" aria-labelledby="headline-title">
+        <div class="section-heading section-heading--inverse">
+          <p class="eyebrow">Lead Story</p>
+          <h2 id="headline-title">今日头条</h2>
+        </div>
+
+        <article class="lead-story" id="lead-story" data-category="enterprise">
+    <div class="lead-story__visual" aria-hidden="true">
+      <div class="orb orb--one"></div>
+      <div class="orb orb--two"></div>
+      <svg viewBox="0 0 420 320">
+        <path d="M42 210C91 127 143 102 208 153s115 27 170-77"></path>
+        <circle cx="42" cy="210" r="6"></circle>
+        <circle cx="208" cy="153" r="6"></circle>
+        <circle cx="378" cy="76" r="6"></circle>
+      </svg>
+      <span class="visual-label">GOVERNANCE / SCALE / SAFETY</span>
+    </div>
+
+    <div class="lead-story__content">
+      <div class="story-meta">
+        <span class="priority priority--high">高优先级</span>
+        <span>AI 治理</span><span>约 2 分钟阅读</span>
+      </div>
+      <h3>AI 公司高管赴 G7 讨论监管、基础设施和线上安全</h3>
+      <p class="story-lede">Reuters 报道，OpenAI、Google DeepMind、Anthropic、Mistral AI、Cohere 等 AI 公司高管预计出席 6 月 15-17 日在法国 Evian-les-Bains 举办的 G7 峰会。</p>
+      <p>推荐理由：6 月 16 日处在峰会进行中，AI 不再只是商业竞争议题，而是被放进国家级基础设施、监管协调和未成年人线上保护框架里讨论。</p>
+      <div class="tag-list" aria-label="文章标签">
+        <span>G7</span><span>OpenAI</span><span>Anthropic</span><span>AI 治理</span>
+      </div>
+      <a class="source-link source-link--light" href="https://www.reuters.com/world/tech-executives-attend-g7-summit-leaders-address-ai-online-safety-2026-06-12" target="_blank" rel="noopener noreferrer">
+        Reuters
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+  </article>
+      </section>
+
+      <section class="news-section section-shell" id="news" aria-labelledby="news-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Industry Pulse</p>
+            <h2 id="news-title">行业动态</h2>
+          </div>
+          <p id="news-summary">从十亿级用户、Agent 安全、算力扩容到开发者工具，捕捉今天最值得关注的行业变化。</p>
+        </div>
+
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="筛选资讯分类">
+        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+          全部 <span>6</span>
+        </button>
+      
+        <button class="filter-button" type="button" data-filter="capital" aria-pressed="false">
+          资本与基建 <span>1</span>
+        </button>
+      
+        <button class="filter-button" type="button" data-filter="enterprise" aria-pressed="false">
+          企业落地 <span>1</span>
+        </button>
+      
+        <button class="filter-button" type="button" data-filter="agent" aria-pressed="false">
+          Agent 动向 <span>4</span>
+        </button>
+      </div>
+
+        <div class="news-grid" id="news-grid" aria-live="polite">
+        <article class="news-card news-card--feature" data-category="enterprise">
+          <div class="card-topline">
+            <span class="card-index">01</span>
+            <span class="priority priority--high">高优先级</span>
+          </div>
+          <div class="card-category">企业落地</div>
+          <h3>ChatGPT 月活 App 用户达到 10 亿</h3>
+          <p>CNBC 援引 Sensor Tower 估计称，ChatGPT 在 2026 年 5 月达到 10 亿月活 App 用户；Claude 和 Meta AI 的月活同比增速分别达到 640% 和 973%。</p>
+          <p class="card-insight">推荐理由：这是 AI 消费级采用率的关键里程碑，也说明公众担忧并没有阻止日常使用继续扩大。</p>
+          <div class="tag-list">
+            <span>ChatGPT</span><span>OpenAI</span><span>Sensor Tower</span><span>消费级 AI</span>
+          </div>
+          <a class="source-link" href="https://www.cnbc.com/2026/06/12/chatgpt-a-billion-monthly-app-users-despite-souring-public-ai-sentiment.html" target="_blank" rel="noopener noreferrer">
+            CNBC
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      
+        <article class="news-card" data-category="agent">
+          <div class="card-topline">
+            <span class="card-index">02</span>
+            <span class="priority priority--high">高优先级</span>
+          </div>
+          <div class="card-category">Agent 动向</div>
+          <h3>Agentjacking 攻击暴露 AI 编码代理新攻击面</h3>
+          <p>The Hacker News 报道，Tenet Security 披露 Agentjacking 攻击：攻击者可通过 Sentry DSN 注入伪造错误事件，让 Claude Code、Cursor、Codex 等编码代理把恶意指令当作可信修复建议执行。</p>
+          <p class="card-insight">推荐理由：这把提示注入从聊天框推进到开发者本机、凭据和 CI/CD 风险，说明 Agent 安全必须默认把外部工具数据视为不可信。</p>
+          <div class="tag-list">
+            <span>Agentjacking</span><span>MCP</span><span>Sentry</span><span>编码代理</span>
+          </div>
+          <a class="source-link" href="https://thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html" target="_blank" rel="noopener noreferrer">
+            The Hacker News
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      
+        <article class="news-card" data-category="capital">
+          <div class="card-topline">
+            <span class="card-index">03</span>
+            <span class="priority priority--medium">中优先级</span>
+          </div>
+          <div class="card-category">资本与算力</div>
+          <h3>Anthropic 通过 SpaceX 算力协议提高 Claude Code 和 API 限额</h3>
+          <p>Anthropic 官方宣布与 SpaceX 达成算力合作，使用 Colossus 1 数据中心全部计算容量，新增超过 300MW、约 220,000+ NVIDIA GPU 级别容量，并提高 Claude Code 五小时限额和 Claude Opus API 限额。</p>
+          <p class="card-insight">推荐理由：AI 产品体验正在被算力供给直接塑造，Claude Code 的使用限额变化也会影响开发者对 Agent 工具的日常依赖。</p>
+          <div class="tag-list">
+            <span>Anthropic</span><span>Claude Code</span><span>SpaceX</span><span>算力</span>
+          </div>
+          <a class="source-link" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener noreferrer">
+            Anthropic
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      
+        <article class="news-card" data-category="agent">
+          <div class="card-topline">
+            <span class="card-index">04</span>
+            <span class="priority priority--medium">中优先级</span>
+          </div>
+          <div class="card-category">Agent 动向</div>
+          <h3>Agent-Reach 登上 GitHub Trending</h3>
+          <p>Codex 内置 Browser 读取 GitHub Trending Today 显示，Panniantong/Agent-Reach 约 31,091 stars，1,100 stars today，项目主打让 AI agent 读取和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等平台。</p>
+          <p class="card-insight">推荐理由：多平台信息读取正在变成 Agent 的基础能力，这个项目直接贴近内容创作者、研究和自动化工作流。</p>
+          <div class="tag-list">
+            <span>Agent-Reach</span><span>GitHub Trending</span><span>AI Agent</span><span>信息检索</span>
+          </div>
+          <a class="source-link" href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      
+        <article class="news-card" data-category="agent">
+          <div class="card-topline">
+            <span class="card-index">05</span>
+            <span class="priority priority--medium">中优先级</span>
+          </div>
+          <div class="card-category">Agent 动向</div>
+          <h3>NVIDIA SkillSpector 瞄准 Agent skill 安全扫描</h3>
+          <p>Codex 内置 Browser 读取 GitHub Trending Today 显示，NVIDIA/SkillSpector 约 6,654 stars，1,079 stars today。项目定位为 AI agent skills 安全扫描器，用于检测漏洞、恶意模式和安全风险。</p>
+          <p class="card-insight">推荐理由：Agentjacking 把风险摆到台前后，skill、MCP 和工具调用的安全扫描会成为 Agent 工具链的默认需求。</p>
+          <div class="tag-list">
+            <span>NVIDIA</span><span>SkillSpector</span><span>Agent 安全</span><span>GitHub Trending</span>
+          </div>
+          <a class="source-link" href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      
+        <article class="news-card" data-category="agent">
+          <div class="card-topline">
+            <span class="card-index">06</span>
+            <span class="priority priority--medium">中优先级</span>
+          </div>
+          <div class="card-category">Agent 动向</div>
+          <h3>Google DeepMind 关注多 AI agents 的集体行为</h3>
+          <p>已登录 Chrome 只读核验的 X 动态显示，Google DeepMind 与 Schmidt Sciences、Cooperative AI Foundation、ARIA 等合作，并由 Google.org 支持，启动 1,000 万美元研究基金，研究大量 AI agents 互动时出现的集体行为。</p>
+          <p class="card-insight">推荐理由：multi-agent 从产品编排进入安全、治理和集体行为研究，是 Agent 规模化后的关键问题。该动态发布时间为 2026 年 6 月 11 日，本期作为相邻背景信号收录。</p>
+          <div class="tag-list">
+            <span>Google DeepMind</span><span>Multi-agent</span><span>AI 安全</span><span>研究基金</span>
+          </div>
+          <a class="source-link" href="https://x.com/GoogleDeepMind/status/2065031279213441309" target="_blank" rel="noopener noreferrer">
+            X / Google DeepMind
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </article>
+      </div>
+        <p class="filter-status" id="filter-status" aria-live="polite">当前显示全部 6 条行业动态。</p>
+      </section>
+
+      <section class="trends-section section-shell" id="trends" aria-labelledby="trends-title" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">GitHub Trending</p>
+            <h2 id="trends-title">趋势项目</h2>
+          </div>
+          <p id="trends-summary">从 GitHub Trending 中筛选 AI、Agent、LLM 和 developer tools 相关项目。</p>
+        </div>
+
+        <div class="trend-grid" id="trend-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="insights section-shell" id="insights" aria-labelledby="insights-title">
+        <div class="insights-main">
+          <p class="eyebrow">Editor’s View</p>
+          <h2 id="insights-title">趋势观察</h2>
+          <blockquote id="insights-quote">“AI 的下一阶段，不只是更强模型，而是更清晰的权限、治理和执行边界。”</blockquote>
+          <p id="insights-text">本期素材同时出现了三种压力：G7 代表治理压力，ChatGPT 10 亿月活代表规模压力，Agentjacking 和 SkillSpector 代表可控执行压力。AI 从工具走向基础设施后，每一步增长都会带来新的责任边界。</p>
+        </div>
+
+        <div class="watch-list">
+          <h3>接下来关注什么</h3>
+          <ol id="watch-list">
+          <li>
+            <span>01</span>
+            <p>G7 关于 AI、线上安全和未成年人保护的声明是否会影响平台合规</p>
+          </li>
+        
+          <li>
+            <span>02</span>
+            <p>ChatGPT 十亿月活之后，Claude、Gemini 和 Meta AI 的增长差距如何变化</p>
+          </li>
+        
+          <li>
+            <span>03</span>
+            <p>Agentjacking 是否会推动 MCP 工具输出隔离、权限确认和运行时防护成为默认能力</p>
+          </li>
+        
+          <li>
+            <span>04</span>
+            <p>Agent-Reach、cua、SkillSpector 等开源项目是否会组成新的 Agent 基础设施栈</p>
+          </li>
+        
+        </ol>
+        </div>
+      </section>
+
+      <section class="data-section section-shell" id="data" aria-labelledby="data-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">By The Numbers</p>
+            <h2 id="data-title">今日数据</h2>
+          </div>
+          <p>用四个数字快速理解今天的内容结构。</p>
+        </div>
+
+        <dl class="stats-grid" id="stats-grid">
+          <div>
+            <dt>高优先级内容</dt>
+            <dd><strong>3</strong><span>条</span></dd>
+          </div>
+        
+          <div>
+            <dt>中优先级内容</dt>
+            <dd><strong>4</strong><span>条</span></dd>
+          </div>
+        
+          <div>
+            <dt>Agent 相关</dt>
+            <dd><strong>5</strong><span>条</span></dd>
+          </div>
+        
+          <div>
+            <dt>治理与安全相关</dt>
+            <dd><strong>4</strong><span>条</span></dd>
+          </div>
+        </dl>
+
+        <div class="keywords">
+          <h3>今日关键词</h3>
+          <div class="keyword-cloud" id="keyword-cloud" aria-label="今日关键词列表"><span>G7</span><span>ChatGPT</span><span>Agentjacking</span><span>MCP</span><span>Claude Code</span><span>Agent-Reach</span><span>SkillSpector</span><span>Google DeepMind</span><span>AI 治理</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-shell">
+        <div>
+          <a class="brand brand--footer" href="#top">
+            <span class="brand-mark" aria-hidden="true">AI</span>
+            <span class="brand-copy">
+              <strong>行业日报</strong>
+              <small>记录 AI 产业的关键变化</small>
+            </span>
+          </a>
+          <p class="source-note">
+            本日报根据指定素材整理，新闻事实与链接沿用原始素材，未进行额外核验。
+          </p>
+        </div>
+        <p>© <span id="current-year">2026</span> AI Industry Daily</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="返回页面顶部" title="返回顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5M6 11l6-6 6 6"></path>
+      </svg>
+    </button>
+  
+
+</body></html>
